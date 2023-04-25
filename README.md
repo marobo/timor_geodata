@@ -42,6 +42,7 @@ git clone git@github.com:marobo/timor_geodata.git
 
 cd into `timor_geodata` folder and then delete git from this repository. 
 After you deleted `.git` folder, this `timor_geodata` folder isn't looks like as git repo anymore.
+So that prevent as to not run multiple git repo in our project.
 
 ```
 cd timor_geodata
@@ -50,4 +51,25 @@ rm -rf .git
 After done this step, add this `timor_geodata` app onto installation app on your `settings.py` as instruction above
 and then run `./manage.py migrate`
 
+### 3. Import shapefiles
+Run command below to import shapefiles into you database
 
+Import Districts or Municipalities
+```
+./manage.py import_district_shapefiles
+```
+
+Import Sudistricts or Administrative Post
+```
+./manage.py import_subdistrict_shapefiles
+```
+
+Import Sucos
+```
+./manage.py import_shapefiles
+```
+
+Import Aldeias
+```
+./manage.py import_aldeia_shapefiles
+```
