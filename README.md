@@ -87,6 +87,7 @@ Runserver and then check
 ```
 
 Visit the site and see the geodata display in admin
-```
+
 [http://127.0.0.1:8005/admin/timor_geodata/
-](http://127.0.0.1:8005/admin/timor_geodata)```
+](http://127.0.0.1:8005/admin/timor_geodata)
+
