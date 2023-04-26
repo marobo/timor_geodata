@@ -1,17 +1,19 @@
 # This is a Timor-Leste Geodata
-## Get started
-Follow instruction below to start using **timor_geodata** on you django project
-### 1. Use this as git submodule on your project
 
-On your local project directory, run git submodule command below to add this repo to your Django project as gitsubmodule:
+Follow instruction below to start using **timor_geodata** on you django project
+
+### First Method 
+On you Django project directory, run git submodule command below to add this repo to your Django project as gitsubmodule:
 
 ```
 git submodule add git@github.com:marobo/timor_geodata.git
 ```
 
-To include the app in our project, we need to add a reference to its configuration class in the **INSTALLED_APPS** setting. 
+To include the app in your project, we need to add a reference to its configuration class in the **INSTALLED_APPS** setting. 
 
-The **TimorGeodataConfig** class is in the `timor_geodata/apps.py` file, so its dotted path is **timor_geodata.apps.TimorGeodataConfig**. Edit the `mysite/settings.py` file and add that dotted path to the **INSTALLED_APPS** setting. It’ll look like this:
+The **TimorGeodataConfig** class is in the `timor_geodata/apps.py` file, so its dotted path is **timor_geodata.apps.TimorGeodataConfig**. 
+
+Edit the `mysite/settings.py` file and add that dotted path to the **INSTALLED_APPS** setting. It’ll look like this:
 
 
 ```
@@ -27,7 +29,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-After configuration on settings, Now Django knows to include the `timor_geodata` app. 
+After this configuration, Now Django knows to include the `timor_geodata` an a app. 
 
 Let’s run another command to apply the migrations from that app:
 
@@ -35,7 +37,8 @@ Let’s run another command to apply the migrations from that app:
 ./manage.py migrate
 ```
 
-### 2. Otherwise we can just clone this repo into our Django project and run this as an app
+### Second Method 
+Otherwise we can just clone this repo into our Django project and run this as an app
 
 Run git command below to clone this repo into your existing Djangoproject:
 
@@ -54,7 +57,7 @@ rm -rf .git
 Add this `timor_geodata` app into your installation app on your Django project `settings.py` as instruction in number 1.
 and then run `./manage.py migrate`
 
-### 3. Import Timor Geodata from Shapefiles
+### Import Timor Geodata from Shapefiles
 Run command below to import Timor Geodata into your database
 
 Import Districts or Municipalities
@@ -77,7 +80,7 @@ Import Aldeias
 ./manage.py import_aldeia_shapefiles
 ```
 
-### 3. Test
+### Test
 Runserver and then check
 ```
 ./manage.py runserver
@@ -85,5 +88,5 @@ Runserver and then check
 
 Visit the site and see the geodata display in admin
 ```
-http://127.0.0.1:8005/admin/timor_geodata/
-```
+[http://127.0.0.1:8005/admin/timor_geodata/
+](http://127.0.0.1:8005/admin/timor_geodata)```
