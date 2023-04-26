@@ -78,5 +78,12 @@ Import Aldeias
 ```
 
 ### 3. Test
-Runserver and 
+Runserver and then check
+```
+./manage.py runserver
+```
 
+Visit the site and see the geodata display in admin
+```
+http://127.0.0.1:8005/admin/timor_geodata/
+```
