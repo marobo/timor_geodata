@@ -3,16 +3,20 @@
 Follow instruction below to start using **timor_geodata** on you django project
 ### 1. Use this as git submodule on your project
 
-On you local project directory, run git submodule command below to add this repo on your project as gitsubmodule:
+On your local project directory, run git submodule command below to add this repo to your Django project as gitsubmodule:
 
 ```
 git submodule add git@github.com:marobo/timor_geodata.git
 ```
 
-Add the `timor_geodata` app onto installation app on your `settings.py`
+To include the app in our project, we need to add a reference to its configuration class in the **INSTALLED_APPS** setting. 
+
+The **TimorGeodataConfig** class is in the `timor_geodata/apps.py` file, so its dotted path is **timor_geodata.apps.TimorGeodataConfig**. Edit the `mysite/settings.py` file and add that dotted path to the **INSTALLED_APPS** setting. It’ll look like this:
+
 
 ```
 INSTALLED_APPS = [
+    'timor_geodata',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -20,39 +24,38 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
-    ......
-    'timor_geodata',
-    ......
 ]
 ```
 
-After configuration on settings, run `./manage.py migrate` to apply migrations
+After configuration on settings, Now Django knows to include the `timor_geodata` app. 
+
+Let’s run another command to apply the migrations from that app:
 
 ```
 ./manage.py migrate
 ```
 
-### 2. Otherwise you can just clone this repo onto your project and run this as an app
+### 2. Otherwise we can just clone this repo into our Django project and run this as an app
 
-run git command below to clone this repo onto your project:
+Run git command below to clone this repo into your existing Djangoproject:
 
 ```
 git clone git@github.com:marobo/timor_geodata.git
 ```
 
-cd into `timor_geodata` folder and then delete git from this repository. 
-After you deleted `.git` folder, this `timor_geodata` folder isn't looks like as git repo anymore.
-So that prevent as to not run multiple git repo in our project.
+cd into `timor_geodata` directory and then delete git from this repo. 
+This is to prevent to not run multiple git repo in our project.
 
 ```
 cd timor_geodata
 rm -rf .git
 ```
-After done this step, add this `timor_geodata` app onto installation app on your `settings.py` as instruction above
+
+Add this `timor_geodata` app into your installation app on your Django project `settings.py` as instruction in number 1.
 and then run `./manage.py migrate`
 
-### 3. Import shapefiles
-Run command below to import shapefiles into you database
+### 3. Import Timor Geodata from Shapefiles
+Run command below to import Timor Geodata into your database
 
 Import Districts or Municipalities
 ```
@@ -66,10 +69,14 @@ Import Sudistricts or Administrative Post
 
 Import Sucos
 ```
-./manage.py import_shapefiles
+./manage.py import_suco_shapefiles
 ```
 
 Import Aldeias
 ```
 ./manage.py import_aldeia_shapefiles
 ```
+
+### 3. Test
+Runserver and 
+
