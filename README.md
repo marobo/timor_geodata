@@ -29,7 +29,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-After this configuration, Now Django knows to include the `timor_geodata` an a app. 
+After this configuration, Now Django knows the `timor_geodata` as an app. 
 
 Let’s run another command to apply the migrations from that app:
 
@@ -38,9 +38,9 @@ Let’s run another command to apply the migrations from that app:
 ```
 
 ### Second Method 
-Otherwise we can just clone this repo into our Django project and run this as an app
+Otherwise we can just clone this repository into the Django project
 
-Run git command below to clone this repo into your existing Djangoproject:
+Run git command below to clone this repo into your existing Django project:
 
 ```
 git clone git@github.com:marobo/timor_geodata.git
@@ -81,12 +81,12 @@ Import Aldeias
 ```
 
 ### Test
-Runserver and then check
+Runserver and check
 ```
 ./manage.py runserver
 ```
 
-Visit the site and see the geodata display in admin
+Visit the site and see the geodata display in the admin
 
 [http://127.0.0.1:8000/admin/timor_geodata/
 ](http://127.0.0.1:8000/admin/timor_geodata)
