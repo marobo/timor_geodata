@@ -6,7 +6,7 @@ class Command(BaseCommand):
     help = 'Import models from shapefiles'
 
     def handle(self, *args, **options):
-        path_of_shp = './imor_geodata/shapefiles/Aldeia.shp'
+        path_of_shp = './timor_geodata/shapefiles/Aldeia.shp'
         aldeia_mapping = {
             'name': 'Name',
             'geom': 'POINT'
