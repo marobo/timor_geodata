@@ -13,7 +13,7 @@ To include the app in your project, we need to add a reference to its configurat
 
 The **TimorGeodataConfig** class is in the `timor_geodata/apps.py` file, so its dotted path is **timor_geodata.apps.TimorGeodataConfig**. 
 
-Edit the `mysite/settings.py` file and add that dotted path to the **INSTALLED_APPS** setting. It’ll look like this:
+Edit the `mysite/settings.py` file and add the `timor_geodata` app and `'django.contrib.gis',` to the **INSTALLED_APPS** setting. It’ll look like this:
 
 
 ```
@@ -29,7 +29,17 @@ INSTALLED_APPS = [
 ]
 ```
 
-After this configuration, Now Django knows the `timor_geodata` as an app. 
+Change the default db engine to postgis
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'databasename_db',
+    }
+}
+```
+
+After this configuration, Now Django knows the `timor_geodata` as an app.
 
 Let’s run another command to apply the migrations from that app:
 
