@@ -1,33 +1,33 @@
-# This is a Timor-Leste Geodata
+# This is Timor-Leste Geodata for running in Django Project
 
-Follow instruction below to start using **timor_geodata** on you django project
+Follow instruction below to start using **timor_geodata** on your django project
 
 ### First Method 
-On you Django project directory, run git submodule command below to add this repo to your Django project as gitsubmodule:
+On your Django project directory, run git submodule command below to get this repo in your Django project as gitsubmodule:
 
 ```
 git submodule add git@github.com:marobo/timor_geodata.git
 ```
 
-To include the app in your project, we need to add a reference to its configuration class in the **INSTALLED_APPS** setting. 
-
-The **TimorGeodataConfig** class is in the `timor_geodata/apps.py` file, so its dotted path is **timor_geodata.apps.TimorGeodataConfig**. 
+To include the app in your project, we need to add a reference to its configuration class in the **INSTALLED_APPS** section in `setting.py`. 
 
 Edit the `mysite/settings.py` file and add the `timor_geodata` app and `'django.contrib.gis',` to the **INSTALLED_APPS** setting. It’ll look like this:
 
 
 ```
 INSTALLED_APPS = [
-    'timor_geodata',
+    'timor_geodata', # New
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.gis',
+    'django.contrib.gis', # New
 ]
 ```
+
+The **TimorGeodataConfig** class is in the `timor_geodata/apps.py` file, so its dotted path is **timor_geodata.apps.TimorGeodataConfig**. 
 
 Change the default db engine to postgis
 ```
