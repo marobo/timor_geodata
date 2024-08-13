@@ -3,9 +3,12 @@
 Follow instruction below to start using **timor_geodata** on your django project
 
 # Notes
+Maybe, this Geodata can only running in postgresSQL database
 
-Maybe, this is can be only running when your django project is running postgresSQL database
+### Sources of Shapefiles
+- Timor-Leste - Subnational Administrative Boundaries https://data.humdata.org/m/dataset/cod-ab-tls
 
+### Instalations
 - The latest version of postgresSQL has more tools for geo data, visit this [https://postgresapp.com/documentation/](https://postgresapp.com/documentation/)
   
 - GeoDjango requirements - https://docs.djangoproject.com/en/5.0/ref/contrib/gis/install/#homebrew
