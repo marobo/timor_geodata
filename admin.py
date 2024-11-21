@@ -1,6 +1,6 @@
 from django.contrib.gis import admin
 from django.contrib.auth.admin import UserAdmin as DefaultUserAdmin
-
+from django.contrib.gis.admin import OSMGeoAdmin
 from .models import Aldeia, Suco, Subdistrict, District
 
 
