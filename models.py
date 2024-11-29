@@ -1,5 +1,4 @@
 from django.contrib.gis.db import models
-from django.contrib.gis.geos import Point
 
 
 class Aldeia(models.Model):
@@ -19,6 +18,7 @@ class Suco(models.Model):
     def __str__(self):
         return self.name
 
+
 class Subdistrict(models.Model):
     name = models.CharField(max_length=124)
     geom = models.MultiPolygonField()
@@ -28,6 +28,41 @@ class Subdistrict(models.Model):
 
 
 class District(models.Model):
+    name = models.CharField(max_length=124)
+    geom = models.MultiPolygonField()
+
+    def __str__(self):
+        return self.name
+
+
+# NEW TLS_ADM_FILES
+class TLS_adm0(models.Model):
+    name = models.CharField(max_length=124)
+    geom = models.PolygonField()
+
+    def __str__(self):
+        return self.name
+
+
+class TLS_adm1(models.Model):
+    name = models.CharField(max_length=124)
+    adm0_name = models.CharField(max_length=124)
+    adm1_name = models.CharField(max_length=124)
+    geom = models.MultiPolygonField()
+
+    def __str__(self):
+        return self.name
+
+
+class TLS_adm2(models.Model):
+    name = models.CharField(max_length=124)
+    geom = models.MultiPolygonField()
+
+    def __str__(self):
+        return self.name
+
+
+class TLS_adm3(models.Model):
     name = models.CharField(max_length=124)
     geom = models.MultiPolygonField()
 
